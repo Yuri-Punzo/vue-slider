@@ -15,11 +15,19 @@
 <body>
 
     <section class="carousel_section">
-        <div class="container">
+        <div id="app" class="container">
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-6 bg-light pt-3 text-center">
+                <div class="col-6 bg-light pt-3 text-center card">
                     <div class="carousel">
+                        <h4 :class="i === visibleImg ? 'visible' : '' " v-for="(title,i) in games.title">
+                            {{games.title[visibleImg]}}
+                        </h4>
+                        <p :class="i === visibleImg ? 'visible' : '' " v-for="(description,i) in games.title">
+                            {{games.description[visibleImg]}}
+                        </p>
+                        <img :class="i === visibleImg ? 'visible' : '' " v-for="(image,i) in games.image" :src="games.image[visibleImg]" alt="">
                     </div>
+
                     <div class="d-flex justify-content-around">
                         <button onclick="prevFunction()" class="my-2" id="previous">
                             <i class="fa-solid fa-chevron-left px-1"></i>
@@ -34,6 +42,7 @@
     </section>
 
 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/JS/main.js"></script>
 </body>
 

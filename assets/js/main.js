@@ -10,38 +10,96 @@ regola d'oro: riciclare ovunque possibile! Questo significa che per la parte di 
 il riciclo spesso va a braccetto con le funzioni! Sapendole sfruttare bene, l'esercizio si riduce a poche righe :occhiolino:
 se a schermo appare qualcosa di strano, tipo {{message}} verificate di aver collegato la CDN */
 
+const { createApp } = Vue
 
-const slidesList = [
-    {
-        image: 'img/01 Spiderman - Miles Morales.webp',
-        title: 'Marvel\'s Spiderman Miles Morale',
-        text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
-    }, {
-        image: 'img/02 Ratchet & Clank - Rift Apart.webp',
-        title: 'Ratchet & Clank: Rift Apart',
-        text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
-    }, {
-        image: 'img/03 Fortnite.webp',
-        title: 'Fortnite',
-        text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
-    }, {
-        image: 'img/04 Stray.webp',
-        title: 'Stray',
-        text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
-    }, {
-        image: 'img/05 Avengers.webp',
-        title: "Marvel's Avengers",
-        text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
+createApp({
+    data() {
+        return {
+            visibleImg: 0,
+            games: {
+                image: [
+                    './assets/img/01 Spiderman - Miles Morales.webp',
+                    './assets/img/02 Ratchet & Clank - Rift Apart.webp',
+                    './assets/img/03 Fortnite.webp',
+                    './assets/img/04 Stray.webp',
+                    './assets/img/05 Avengers.webp'
+                ],
+                title: [
+                    'Marvel\'s Spiderman Miles Morale',
+                    'Ratchet & Clank: Rift Apart',
+                    'Fortnite',
+                    'Stray',
+                    "Marvel's Avengers"
+                ],
+                description: [
+                    'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
+                    'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
+                    "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
+                    'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
+                    'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.'
+
+                ]
+            }
+        }
+    },
+    methods: {
+
     }
-];
+}).mount("#app")
 
-console.log(slidesList);
 
-/* seleziono dove mettere le immagini */
+// class="${i === visibleImg ? 'visible' : ''}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* console.log(slidesList);
+
+// seleziono dove mettere le immagini
 const slidesElement = document.querySelector(".carousel");
 
-/* getto la base per il mio counter e per poi passare alle imagini successive con ++ 
-   (inoltre se vado a cambiare "= 0" in "= X" posso far partire le slide da un img diversa)*/
+// getto la base per il mio counter e per poi passare alle imagini successive con ++ 
+   //(inoltre se vado a cambiare "= 0" in "= X" posso far partire le slide da un img diversa)
 let visibleImg = 0;
 
 for (let i = 0; i < slidesList.length; i++) {
@@ -53,20 +111,20 @@ for (let i = 0; i < slidesList.length; i++) {
     //console.log(slidesHtml);
 }
 
-/* creo due variabile che selezionino i pulsanti per farli poi funzionare */
+// creo due variabile che selezionino i pulsanti per farli poi funzionare
 const prevButton = document.getElementById("previous");
 const nextButton = document.getElementById("next");
 
-/*  adesso voglio cambiare immagine con il click di next:
-    vado a selezionare tutte le immagini con una var allImg
-    creo una variabile (currentSlide) per poter selezionare l'img visibile al momento
-    (dato che visibleImg ha valore zero pescherà la prima immagine)
-    poi gli tolgo la classe visible con classlist.remove facendola sparire
-    devo far andare avanti il counter di visibleImg con ++
-    (var visibleImg creata prima del ciclo for e che di fatto "tiene il conto" per noi)
-    inserito if, leggi sotto perché etcc..
-    dopo if creo una var nextImg per l'img a seguire
-    assegno alla img a seguire la classe visible per farla apparire */
+// adesso voglio cambiare immagine con il click di next:
+// vado a selezionare tutte le immagini con una var allImg
+// creo una variabile (currentSlide) per poter selezionare l'img visibile al momento
+// (dato che visibleImg ha valore zero pescherà la prima immagine)
+// poi gli tolgo la classe visible con classlist.remove facendola sparire
+// devo far andare avanti il counter di visibleImg con ++
+// (var visibleImg creata prima del ciclo for e che di fatto "tiene il conto" per noi)
+// inserito if, leggi sotto perché etcc..
+// dopo if creo una var nextImg per l'img a seguire
+// assegno alla img a seguire la classe visible per farla apparire 
 function nextFunction() {
     const allImg = document.querySelectorAll('.carousel > img');
     const allTitle = document.querySelectorAll('.carousel > h4');
@@ -92,7 +150,7 @@ function nextFunction() {
     nextParagraph.classList.add("visible")
 }
 
-/* ora ricopio da sopra ma con -- per fare il previous img */
+// ora ricopio da sopra ma con -- per fare il previous img
 function prevFunction() {
     const allImg = document.querySelectorAll('.carousel > img');
     const allTitle = document.querySelectorAll('.carousel > h4');
@@ -116,3 +174,6 @@ function prevFunction() {
     prevTitle.classList.add("visible")
     prevParagraph.classList.add("visible")
 }
+
+
+ */
