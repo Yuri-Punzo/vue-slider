@@ -19,13 +19,13 @@
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-6 bg-light pt-3 text-center card">
                     <div class="carousel">
-                        <h4 :class="i === visibleImg ? 'visible' : '' " v-for="(title,i) in games.title">
-                            {{games.title[visibleImg]}}
+                        <h4 :class="i === visibleElement ? 'visible' : '' " v-for="(title,i) in games">
+                            {{games[visibleElement].title}}
                         </h4>
-                        <p :class="i === visibleImg ? 'visible' : '' " v-for="(description,i) in games.title">
-                            {{games.description[visibleImg]}}
+                        <p :class="i === visibleElement ? 'visible' : '' " v-for="(description,i) in games">
+                            {{games[visibleElement].description}}
                         </p>
-                        <img :class="i === visibleImg ? 'visible' : '' " v-for="(image,i) in games.image" :src="games.image[visibleImg]" alt="">
+                        <img :class="i === visibleElement ? 'visible' : '' " v-for="(image,i) in games" :src="games[visibleElement].image" alt="">
                     </div>
 
                     <div class="d-flex justify-content-around">

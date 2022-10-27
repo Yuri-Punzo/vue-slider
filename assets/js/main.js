@@ -15,31 +15,35 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            visibleImg: 0,
-            games: {
-                image: [
-                    './assets/img/01 Spiderman - Miles Morales.webp',
-                    './assets/img/02 Ratchet & Clank - Rift Apart.webp',
-                    './assets/img/03 Fortnite.webp',
-                    './assets/img/04 Stray.webp',
-                    './assets/img/05 Avengers.webp'
-                ],
-                title: [
-                    'Marvel\'s Spiderman Miles Morale',
-                    'Ratchet & Clank: Rift Apart',
-                    'Fortnite',
-                    'Stray',
-                    "Marvel's Avengers"
-                ],
-                description: [
-                    'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
-                    'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
-                    "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
-                    'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
-                    'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.'
+            visibleElement: 0,
+            games: [
+                {
+                    title: 'Marvel\'s Spiderman Miles Morale',
+                    image: './assets/img/01 Spiderman - Miles Morales.webp',
+                    description: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
+                },
+                {
+                    title: 'Ratchet & Clank: Rift Apart',
+                    image: './assets/img/02 Ratchet & Clank - Rift Apart.webp',
+                    description: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
+                },
+                {
+                    title: 'Fortnite',
+                    image: './assets/img/03 Fortnite.webp',
+                    description: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
+                },
+                {
+                    title: 'Stray',
+                    image: './assets/img/04 Stray.webp',
+                    description: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
+                },
+                {
+                    title: "Marvel's Avengers",
+                    image: './assets/img/05 Avengers.webp',
+                    description: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
+                }
+            ]
 
-                ]
-            }
         }
     },
     methods: {
@@ -48,7 +52,6 @@ createApp({
 }).mount("#app")
 
 
-// class="${i === visibleImg ? 'visible' : ''}"
 
 
 
@@ -86,14 +89,6 @@ createApp({
 
 
 
-
-
-
-
-
-
-
-/* console.log(slidesList);
 
 // seleziono dove mettere le immagini
 const slidesElement = document.querySelector(".carousel");
@@ -176,4 +171,3 @@ function prevFunction() {
 }
 
 
- */
