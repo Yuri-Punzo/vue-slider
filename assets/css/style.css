@@ -28,3 +28,26 @@ h4,
 p {
     display: none;
 }
+
+.thumb {
+    width: calc(100% / 5);
+    flex-wrap: wrap;
+    display: block;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.active {
+    border: 5px solid rgb(5, 195, 253);
+    border-radius: 10px;
+}
+
+button {    
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    line-height: 100%;
+    text-align: center;
+    
+}

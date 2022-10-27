@@ -27,12 +27,15 @@
                         </p>
                         <img :class="i === visibleElement ? 'visible' : '' " v-for="(image,i) in games" :src="games[visibleElement].image" alt="">
                     </div>
+                    <div class="thumbnails d-flex mt-3">
+                        <img class="thumb m-1" :class="i === visibleElement ? 'active' : '' " v-for="(image,i) in games" :src="games[i].image" alt="">
+                    </div>
 
                     <div class="d-flex justify-content-around">
-                        <button onclick="prevFunction()" class="my-2" id="previous">
+                        <button @click="prevFunction" class="my-2" id="previous">
                             <i class="fa-solid fa-chevron-left px-1"></i>
                         </button>
-                        <button onclick="nextFunction()" class="my-2" id="next">
+                        <button @click="nextFunction" class="my-2" id="next">
                             <i class="fa-solid fa-chevron-right px-1"></i>
                         </button>
                     </div>
