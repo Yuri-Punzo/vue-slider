@@ -15,6 +15,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            intervalId: null,
             visibleElement: 0,
             games: [
                 {
@@ -64,5 +65,16 @@ createApp({
             //console.log(index);
             this.visibleElement = index
         },
-    }
+        autoCicle() {
+            this.intervalId = setInterval(() => {
+                this.nextFunction()
+            }, 3000);
+        },
+        stopAutoCicle() {
+            clearInterval(this.intervalId)
+        }
+    },
+    mounted() {
+        this.autoCicle()
+      }
 }).mount("#app")
