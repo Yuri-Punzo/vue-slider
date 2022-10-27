@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(36, 36, 36);
+}
+
+img {
+    max-width: 100%;
+    display: none;
+    height: 500px;
+    object-fit: contain;
+    margin: auto;
+}
+
+.row {
+    height: 100vh;
+}
+
+.visible {
+    display: block;
+}
+
+h4,
+p {
+    display: none;
+}
