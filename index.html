@@ -19,13 +19,13 @@
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-6 bg-light pt-3 text-center card" @mouseleave="autoCicle" @mouseenter="stopAutoCicle">
                     <div class="carousel">
-                        <h4 v-for="(title,i) in games" :class="i === visibleElement ? 'visible' : '' ">
-                            {{games[i].title}}
+                        <h4>
+                            {{games[visibleElement].title}}
                         </h4>
-                        <p v-for="(description,i) in games"  :class="i === visibleElement ? 'visible' : '' ">
-                            {{games[i].description}}
+                        <p>
+                            {{games[visibleElement].description}}
                         </p>
-                        <img v-for="(image,i) in games" :class="i === visibleElement ? 'visible' : '' " :src="games[i].image" alt="">
+                        <img :src="games[visibleElement].image" alt="">
                     </div>
                     <div class="thumbnails d-flex mt-3">
                         <img v-for="(image,i) in games" class="thumb m-1" :class="i === visibleElement ? 'active' : '' " :src="games[i].image"  @click="matchingImage(i)" alt="">

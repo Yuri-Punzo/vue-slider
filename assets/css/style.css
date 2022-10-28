@@ -10,7 +10,6 @@ body {
 
 img {
     max-width: 100%;
-    display: none;
     height: 500px;
     object-fit: contain;
     margin: auto;
@@ -18,15 +17,6 @@ img {
 
 .row {
     height: 100vh;
-}
-
-.visible {
-    display: block;
-}
-
-h4,
-p {
-    display: none;
 }
 
 .thumb {
